@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from data import *
 from time import sleep
 
-def data1(chrome_browser):
+def data_test(chrome_browser):
     chrome_browser.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
     data = {
     'First_name': First_name,
