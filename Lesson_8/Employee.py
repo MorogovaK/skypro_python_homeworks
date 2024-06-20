@@ -1,6 +1,6 @@
 import requests
 import json
-from Lesson_8.constant import X_client_URL
+from constant import X_client_URL
 
 path = '/employee/'
 

@@ -2,7 +2,7 @@ import pytest
 import requests
 import json
 from Employee import Employer, Company
-from Lesson_8.constant import X_client_URL
+from constant import X_client_URL
 
 employer = Employer()
 company = Company()
