@@ -7,21 +7,22 @@ class MainPage:
     def __init__(self, driver):
         self.driver = driver
         self.driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
-        wait = WebDriverWait(driver, 10)
-        element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[type="submit"]')))
+        # wait = WebDriverWait(driver, 10)
+        # element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '[type="submit"]')))
 
 
     def find_fields(self):
-        self._first_name = (By.NAME, "first_name")
-        self._last_name = (By.NAME, "last_name")
+        self._first_name = (By.NAME, "first-name")
+        self._last_name = (By.NAME, "last-name")
         self._address = (By.NAME, "address")
-        self._zip_code = (By.NAME, "zip_code")
+        self._zip_code = (By.NAME, "zip-code")
         self._city = (By.NAME, "city")
         self._country = (By.NAME, "country")
-        self._email = (By.NAME, "email")
+        self._email = (By.NAME, "e-mail")
         self._phone = (By.NAME, "phone")
-        self._job_position = (By.NAME, "job_position")
+        self._job_position = (By.NAME, "job-position")
         self._company = (By.NAME, "company")
+        self._button = (By.TAG_NAME, "button")
 
     def information_about_me(self):
         self.driver.find_element(*self._first_name).send_keys(first_name)
@@ -35,6 +36,5 @@ class MainPage:
         self.driver.find_element(*self._job_position).send_keys(job_position)
         self.driver.find_element(*self._company).send_keys(company)
 
-
-    def button_click(self):
-        self.driver.find_element(By.CSS_SELECTOR,'[type="submit"]').click()
+    def click_button(self):
+        WebDriverWait(self.driver, 40, 0.1).until(EC.element_to_be_clickable(self._button)).click()

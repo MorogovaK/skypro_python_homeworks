@@ -8,9 +8,10 @@ class FirstPage:
         self.driver.get("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
 
 
-    def new_time(self):
-        time = self._clear = (By.CSS_SELECTOR, "#delay").clear()
-        time.send_keys("45")
+    def insert_time(self):
+        delay_input = self.driver.find_element(By.ID, "delay")
+        delay_input.clear()
+        delay_input.send_keys(45)
 
 
     def find_numbers(self):
