@@ -12,4 +12,4 @@ def test_calculator(driver):
     first_page.insert_time()
     first_page.find_numbers()
     first_page.wait_for_result()
-    assert "15" in first_page.wait_for_result
+    assert "15" in first_page.wait_for_result()
